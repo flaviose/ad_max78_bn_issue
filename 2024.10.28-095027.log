@@ -1,0 +1,470 @@
+2024-10-28 09:50:27,471 - Log file for this run: /home/flaviose/master_thesis/ai8x-training/logs/2024.10.28-095027/2024.10.28-095027.log
+2024-10-28 09:50:27,471 - The open file limit is 1024. Please raise the limit (see documentation).
+2024-10-28 09:50:27,471 - Configuring device: MAX78000, simulate=True.
+2024-10-28 09:50:27,477 - No CUDA, ROCm, or MPS hardware acceleration, training will be slow
+2024-10-28 09:50:27,523 - => loading checkpoint ../ai8x-synthesis/memes/qat_best.pth.tar
+2024-10-28 09:50:27,542 - => Checkpoint contents:
++----------------------+-------------+---------+
+| Key                  | Type        | Value   |
+|----------------------+-------------+---------|
+| arch                 | str         | memenet |
+| compression_sched    | dict        |         |
+| epoch                | int         | 1       |
+| extras               | dict        |         |
+| optimizer_state_dict | dict        |         |
+| optimizer_type       | type        | Adam    |
+| state_dict           | OrderedDict |         |
++----------------------+-------------+---------+
+
+2024-10-28 09:50:27,542 - => Checkpoint['extras'] contents:
++--------------+--------+---------+
+| Key          | Type   |   Value |
+|--------------+--------+---------|
+| best_epoch   | int    |       1 |
+| best_mAP     | int    |       0 |
+| best_top1    | float  |       0 |
+| current_mAP  | int    |       0 |
+| current_top1 | float  |       0 |
++--------------+--------+---------+
+
+2024-10-28 09:50:27,543 - {'masks_dict': {'conv1.output_shift': None, 'conv1.weight_bits': None, 'conv1.bias_bits': None, 'conv1.quantize_activation': None, 'conv1.adjust_output_shift': None, 'conv1.shift_quantile': None, 'conv1.op.weight': None, 'conv1.op.bias': None, 'conv1.bn.weight': None, 'conv1.bn.bias': None, 'conv2.output_shift': None, 'conv2.weight_bits': None, 'conv2.bias_bits': None, 'conv2.quantize_activation': None, 'conv2.adjust_output_shift': None, 'conv2.shift_quantile': None, 'conv2.op.weight': None, 'conv2.op.bias': None, 'conv3.output_shift': None, 'conv3.weight_bits': None, 'conv3.bias_bits': None, 'conv3.quantize_activation': None, 'conv3.adjust_output_shift': None, 'conv3.shift_quantile': None, 'conv3.op.weight': None, 'conv3.op.bias': None, 'conv4.output_shift': None, 'conv4.weight_bits': None, 'conv4.bias_bits': None, 'conv4.quantize_activation': None, 'conv4.adjust_output_shift': None, 'conv4.shift_quantile': None, 'conv4.op.weight': None, 'conv4.op.bias': None, 'conv5.output_shift': None, 'conv5.weight_bits': None, 'conv5.bias_bits': None, 'conv5.quantize_activation': None, 'conv5.adjust_output_shift': None, 'conv5.shift_quantile': None, 'conv5.op.weight': None, 'conv5.op.bias': None, 'mp.output_shift': None, 'mp.weight_bits': None, 'mp.bias_bits': None, 'mp.quantize_activation': None, 'mp.adjust_output_shift': None, 'mp.shift_quantile': None, 'fc1.output_shift': None, 'fc1.weight_bits': None, 'fc1.bias_bits': None, 'fc1.quantize_activation': None, 'fc1.adjust_output_shift': None, 'fc1.shift_quantile': None, 'fc1.op.weight': None, 'fc1.op.bias': None, 'fc2.output_shift': None, 'fc2.weight_bits': None, 'fc2.bias_bits': None, 'fc2.quantize_activation': None, 'fc2.adjust_output_shift': None, 'fc2.shift_quantile': None, 'fc2.op.weight': None, 'fc2.op.bias': None, 'fc3.output_shift': None, 'fc3.weight_bits': None, 'fc3.bias_bits': None, 'fc3.quantize_activation': None, 'fc3.adjust_output_shift': None, 'fc3.shift_quantile': None, 'fc3.op.weight': None, 'fc3.op.bias': None}}
+2024-10-28 09:50:27,543 - dict_items([('conv1.output_shift', <distiller.scheduler.ParameterMasker object at 0x736eb0e3f690>), ('conv1.weight_bits', <distiller.scheduler.ParameterMasker object at 0x736eb0ca3910>), ('conv1.bias_bits', <distiller.scheduler.ParameterMasker object at 0x736eb218ef90>), ('conv1.quantize_activation', <distiller.scheduler.ParameterMasker object at 0x736eafeb6910>), ('conv1.adjust_output_shift', <distiller.scheduler.ParameterMasker object at 0x736eb21512d0>), ('conv1.shift_quantile', <distiller.scheduler.ParameterMasker object at 0x736eb0ea66d0>), ('conv1.op.weight', <distiller.scheduler.ParameterMasker object at 0x736eafd6e2d0>), ('conv1.op.bias', <distiller.scheduler.ParameterMasker object at 0x736eafd6ce90>), ('conv1.bn.weight', <distiller.scheduler.ParameterMasker object at 0x736eafd6f350>), ('conv1.bn.bias', <distiller.scheduler.ParameterMasker object at 0x736eafd6f2d0>), ('conv2.output_shift', <distiller.scheduler.ParameterMasker object at 0x736eb218de90>), ('conv2.weight_bits', <distiller.scheduler.ParameterMasker object at 0x736eafd6cb90>), ('conv2.bias_bits', <distiller.scheduler.ParameterMasker object at 0x736eafd6ec50>), ('conv2.quantize_activation', <distiller.scheduler.ParameterMasker object at 0x736eafd6e3d0>), ('conv2.adjust_output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafd6f290>), ('conv2.shift_quantile', <distiller.scheduler.ParameterMasker object at 0x736eafd6f0d0>), ('conv2.op.weight', <distiller.scheduler.ParameterMasker object at 0x736eafd6de90>), ('conv2.op.bias', <distiller.scheduler.ParameterMasker object at 0x736eafeff710>), ('conv3.output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafd6ef50>), ('conv3.weight_bits', <distiller.scheduler.ParameterMasker object at 0x736eafefe710>), ('conv3.bias_bits', <distiller.scheduler.ParameterMasker object at 0x736eafefdb10>), ('conv3.quantize_activation', <distiller.scheduler.ParameterMasker object at 0x736eafefeb50>), ('conv3.adjust_output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafefee50>), ('conv3.shift_quantile', <distiller.scheduler.ParameterMasker object at 0x736eafeffbd0>), ('conv3.op.weight', <distiller.scheduler.ParameterMasker object at 0x736eafeb0a50>), ('conv3.op.bias', <distiller.scheduler.ParameterMasker object at 0x736eafeb08d0>), ('conv4.output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafeb0f90>), ('conv4.weight_bits', <distiller.scheduler.ParameterMasker object at 0x736eafd91d10>), ('conv4.bias_bits', <distiller.scheduler.ParameterMasker object at 0x736eafd91f50>), ('conv4.quantize_activation', <distiller.scheduler.ParameterMasker object at 0x736eafd91110>), ('conv4.adjust_output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafd91fd0>), ('conv4.shift_quantile', <distiller.scheduler.ParameterMasker object at 0x736eafd91a10>), ('conv4.op.weight', <distiller.scheduler.ParameterMasker object at 0x736eafd92510>), ('conv4.op.bias', <distiller.scheduler.ParameterMasker object at 0x736eafd91b90>), ('conv5.output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafeff5d0>), ('conv5.weight_bits', <distiller.scheduler.ParameterMasker object at 0x736eafeff610>), ('conv5.bias_bits', <distiller.scheduler.ParameterMasker object at 0x736eafd91c90>), ('conv5.quantize_activation', <distiller.scheduler.ParameterMasker object at 0x736eafd92010>), ('conv5.adjust_output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafd91890>), ('conv5.shift_quantile', <distiller.scheduler.ParameterMasker object at 0x736eafd91210>), ('conv5.op.weight', <distiller.scheduler.ParameterMasker object at 0x736eafd90cd0>), ('conv5.op.bias', <distiller.scheduler.ParameterMasker object at 0x736eafd911d0>), ('mp.output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafd90150>), ('mp.weight_bits', <distiller.scheduler.ParameterMasker object at 0x736eafd91190>), ('mp.bias_bits', <distiller.scheduler.ParameterMasker object at 0x736eafd91710>), ('mp.quantize_activation', <distiller.scheduler.ParameterMasker object at 0x736eafd91490>), ('mp.adjust_output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafd91a90>), ('mp.shift_quantile', <distiller.scheduler.ParameterMasker object at 0x736eafd92050>), ('fc1.output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafd91390>), ('fc1.weight_bits', <distiller.scheduler.ParameterMasker object at 0x736eafd912d0>), ('fc1.bias_bits', <distiller.scheduler.ParameterMasker object at 0x736eafd91350>), ('fc1.quantize_activation', <distiller.scheduler.ParameterMasker object at 0x736eafd90050>), ('fc1.adjust_output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafd91590>), ('fc1.shift_quantile', <distiller.scheduler.ParameterMasker object at 0x736eafd91e10>), ('fc1.op.weight', <distiller.scheduler.ParameterMasker object at 0x736eafd6e210>), ('fc1.op.bias', <distiller.scheduler.ParameterMasker object at 0x736eafd91050>), ('fc2.output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafd90e10>), ('fc2.weight_bits', <distiller.scheduler.ParameterMasker object at 0x736eafd90e90>), ('fc2.bias_bits', <distiller.scheduler.ParameterMasker object at 0x736eafd90d50>), ('fc2.quantize_activation', <distiller.scheduler.ParameterMasker object at 0x736eafd90c90>), ('fc2.adjust_output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafd90d10>), ('fc2.shift_quantile', <distiller.scheduler.ParameterMasker object at 0x736eafd90c10>), ('fc2.op.weight', <distiller.scheduler.ParameterMasker object at 0x736eafd90bd0>), ('fc2.op.bias', <distiller.scheduler.ParameterMasker object at 0x736eafd90ad0>), ('fc3.output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafd909d0>), ('fc3.weight_bits', <distiller.scheduler.ParameterMasker object at 0x736eafd90950>), ('fc3.bias_bits', <distiller.scheduler.ParameterMasker object at 0x736eafd908d0>), ('fc3.quantize_activation', <distiller.scheduler.ParameterMasker object at 0x736eafd90750>), ('fc3.adjust_output_shift', <distiller.scheduler.ParameterMasker object at 0x736eafd90810>), ('fc3.shift_quantile', <distiller.scheduler.ParameterMasker object at 0x736eafd906d0>), ('fc3.op.weight', <distiller.scheduler.ParameterMasker object at 0x736eafd90590>), ('fc3.op.bias', <distiller.scheduler.ParameterMasker object at 0x736eafd90510>)])
+2024-10-28 09:50:27,543 - tp2
+2024-10-28 09:50:27,543 - conv1.output_shift
+2024-10-28 09:50:27,543 - #################
+2024-10-28 09:50:27,543 - <distiller.scheduler.ParameterMasker object at 0x736eb0e3f690>
+2024-10-28 09:50:27,543 - lol
+2024-10-28 09:50:27,543 - None
+2024-10-28 09:50:27,543 - tp
+2024-10-28 09:50:27,544 - conv1.weight_bits
+2024-10-28 09:50:27,544 - #################
+2024-10-28 09:50:27,544 - <distiller.scheduler.ParameterMasker object at 0x736eb0ca3910>
+2024-10-28 09:50:27,544 - lol
+2024-10-28 09:50:27,544 - None
+2024-10-28 09:50:27,544 - tp
+2024-10-28 09:50:27,544 - conv1.bias_bits
+2024-10-28 09:50:27,544 - #################
+2024-10-28 09:50:27,544 - <distiller.scheduler.ParameterMasker object at 0x736eb218ef90>
+2024-10-28 09:50:27,544 - lol
+2024-10-28 09:50:27,544 - None
+2024-10-28 09:50:27,544 - tp
+2024-10-28 09:50:27,544 - conv1.quantize_activation
+2024-10-28 09:50:27,544 - #################
+2024-10-28 09:50:27,544 - <distiller.scheduler.ParameterMasker object at 0x736eafeb6910>
+2024-10-28 09:50:27,544 - lol
+2024-10-28 09:50:27,544 - None
+2024-10-28 09:50:27,544 - tp
+2024-10-28 09:50:27,545 - conv1.adjust_output_shift
+2024-10-28 09:50:27,545 - #################
+2024-10-28 09:50:27,545 - <distiller.scheduler.ParameterMasker object at 0x736eb21512d0>
+2024-10-28 09:50:27,545 - lol
+2024-10-28 09:50:27,545 - None
+2024-10-28 09:50:27,545 - tp
+2024-10-28 09:50:27,548 - conv1.shift_quantile
+2024-10-28 09:50:27,548 - #################
+2024-10-28 09:50:27,548 - <distiller.scheduler.ParameterMasker object at 0x736eb0ea66d0>
+2024-10-28 09:50:27,548 - lol
+2024-10-28 09:50:27,548 - None
+2024-10-28 09:50:27,548 - tp
+2024-10-28 09:50:27,548 - conv1.op.weight
+2024-10-28 09:50:27,548 - #################
+2024-10-28 09:50:27,548 - <distiller.scheduler.ParameterMasker object at 0x736eafd6e2d0>
+2024-10-28 09:50:27,548 - lol
+2024-10-28 09:50:27,548 - None
+2024-10-28 09:50:27,548 - tp
+2024-10-28 09:50:27,548 - conv1.op.bias
+2024-10-28 09:50:27,548 - #################
+2024-10-28 09:50:27,548 - <distiller.scheduler.ParameterMasker object at 0x736eafd6ce90>
+2024-10-28 09:50:27,548 - lol
+2024-10-28 09:50:27,548 - None
+2024-10-28 09:50:27,549 - tp
+2024-10-28 09:50:27,549 - conv1.bn.weight
+2024-10-28 09:50:27,549 - #################
+2024-10-28 09:50:27,549 - <distiller.scheduler.ParameterMasker object at 0x736eafd6f350>
+2024-10-28 09:50:27,549 - lol
+2024-10-28 09:50:27,549 - None
+2024-10-28 09:50:27,549 - tp
+2024-10-28 09:50:27,549 - conv1.bn.bias
+2024-10-28 09:50:27,549 - #################
+2024-10-28 09:50:27,549 - <distiller.scheduler.ParameterMasker object at 0x736eafd6f2d0>
+2024-10-28 09:50:27,549 - lol
+2024-10-28 09:50:27,549 - None
+2024-10-28 09:50:27,549 - tp
+2024-10-28 09:50:27,549 - conv2.output_shift
+2024-10-28 09:50:27,549 - #################
+2024-10-28 09:50:27,549 - <distiller.scheduler.ParameterMasker object at 0x736eb218de90>
+2024-10-28 09:50:27,549 - lol
+2024-10-28 09:50:27,549 - None
+2024-10-28 09:50:27,550 - tp
+2024-10-28 09:50:27,551 - conv2.weight_bits
+2024-10-28 09:50:27,551 - #################
+2024-10-28 09:50:27,551 - <distiller.scheduler.ParameterMasker object at 0x736eafd6cb90>
+2024-10-28 09:50:27,551 - lol
+2024-10-28 09:50:27,551 - None
+2024-10-28 09:50:27,551 - tp
+2024-10-28 09:50:27,551 - conv2.bias_bits
+2024-10-28 09:50:27,552 - #################
+2024-10-28 09:50:27,552 - <distiller.scheduler.ParameterMasker object at 0x736eafd6ec50>
+2024-10-28 09:50:27,552 - lol
+2024-10-28 09:50:27,552 - None
+2024-10-28 09:50:27,553 - tp
+2024-10-28 09:50:27,553 - conv2.quantize_activation
+2024-10-28 09:50:27,553 - #################
+2024-10-28 09:50:27,553 - <distiller.scheduler.ParameterMasker object at 0x736eafd6e3d0>
+2024-10-28 09:50:27,553 - lol
+2024-10-28 09:50:27,554 - None
+2024-10-28 09:50:27,555 - tp
+2024-10-28 09:50:27,555 - conv2.adjust_output_shift
+2024-10-28 09:50:27,556 - #################
+2024-10-28 09:50:27,556 - <distiller.scheduler.ParameterMasker object at 0x736eafd6f290>
+2024-10-28 09:50:27,559 - lol
+2024-10-28 09:50:27,559 - None
+2024-10-28 09:50:27,559 - tp
+2024-10-28 09:50:27,559 - conv2.shift_quantile
+2024-10-28 09:50:27,559 - #################
+2024-10-28 09:50:27,559 - <distiller.scheduler.ParameterMasker object at 0x736eafd6f0d0>
+2024-10-28 09:50:27,559 - lol
+2024-10-28 09:50:27,559 - None
+2024-10-28 09:50:27,559 - tp
+2024-10-28 09:50:27,559 - conv2.op.weight
+2024-10-28 09:50:27,560 - #################
+2024-10-28 09:50:27,560 - <distiller.scheduler.ParameterMasker object at 0x736eafd6de90>
+2024-10-28 09:50:27,560 - lol
+2024-10-28 09:50:27,560 - None
+2024-10-28 09:50:27,560 - tp
+2024-10-28 09:50:27,560 - conv2.op.bias
+2024-10-28 09:50:27,560 - #################
+2024-10-28 09:50:27,560 - <distiller.scheduler.ParameterMasker object at 0x736eafeff710>
+2024-10-28 09:50:27,560 - lol
+2024-10-28 09:50:27,560 - None
+2024-10-28 09:50:27,560 - tp
+2024-10-28 09:50:27,560 - conv3.output_shift
+2024-10-28 09:50:27,561 - #################
+2024-10-28 09:50:27,561 - <distiller.scheduler.ParameterMasker object at 0x736eafd6ef50>
+2024-10-28 09:50:27,561 - lol
+2024-10-28 09:50:27,562 - None
+2024-10-28 09:50:27,562 - tp
+2024-10-28 09:50:27,562 - conv3.weight_bits
+2024-10-28 09:50:27,562 - #################
+2024-10-28 09:50:27,562 - <distiller.scheduler.ParameterMasker object at 0x736eafefe710>
+2024-10-28 09:50:27,562 - lol
+2024-10-28 09:50:27,562 - None
+2024-10-28 09:50:27,562 - tp
+2024-10-28 09:50:27,562 - conv3.bias_bits
+2024-10-28 09:50:27,562 - #################
+2024-10-28 09:50:27,563 - <distiller.scheduler.ParameterMasker object at 0x736eafefdb10>
+2024-10-28 09:50:27,563 - lol
+2024-10-28 09:50:27,563 - None
+2024-10-28 09:50:27,563 - tp
+2024-10-28 09:50:27,563 - conv3.quantize_activation
+2024-10-28 09:50:27,563 - #################
+2024-10-28 09:50:27,563 - <distiller.scheduler.ParameterMasker object at 0x736eafefeb50>
+2024-10-28 09:50:27,563 - lol
+2024-10-28 09:50:27,563 - None
+2024-10-28 09:50:27,563 - tp
+2024-10-28 09:50:27,563 - conv3.adjust_output_shift
+2024-10-28 09:50:27,563 - #################
+2024-10-28 09:50:27,564 - <distiller.scheduler.ParameterMasker object at 0x736eafefee50>
+2024-10-28 09:50:27,564 - lol
+2024-10-28 09:50:27,564 - None
+2024-10-28 09:50:27,564 - tp
+2024-10-28 09:50:27,564 - conv3.shift_quantile
+2024-10-28 09:50:27,564 - #################
+2024-10-28 09:50:27,564 - <distiller.scheduler.ParameterMasker object at 0x736eafeffbd0>
+2024-10-28 09:50:27,564 - lol
+2024-10-28 09:50:27,564 - None
+2024-10-28 09:50:27,565 - tp
+2024-10-28 09:50:27,565 - conv3.op.weight
+2024-10-28 09:50:27,565 - #################
+2024-10-28 09:50:27,565 - <distiller.scheduler.ParameterMasker object at 0x736eafeb0a50>
+2024-10-28 09:50:27,565 - lol
+2024-10-28 09:50:27,565 - None
+2024-10-28 09:50:27,565 - tp
+2024-10-28 09:50:27,565 - conv3.op.bias
+2024-10-28 09:50:27,565 - #################
+2024-10-28 09:50:27,565 - <distiller.scheduler.ParameterMasker object at 0x736eafeb08d0>
+2024-10-28 09:50:27,565 - lol
+2024-10-28 09:50:27,565 - None
+2024-10-28 09:50:27,565 - tp
+2024-10-28 09:50:27,565 - conv4.output_shift
+2024-10-28 09:50:27,565 - #################
+2024-10-28 09:50:27,566 - <distiller.scheduler.ParameterMasker object at 0x736eafeb0f90>
+2024-10-28 09:50:27,566 - lol
+2024-10-28 09:50:27,566 - None
+2024-10-28 09:50:27,566 - tp
+2024-10-28 09:50:27,566 - conv4.weight_bits
+2024-10-28 09:50:27,566 - #################
+2024-10-28 09:50:27,566 - <distiller.scheduler.ParameterMasker object at 0x736eafd91d10>
+2024-10-28 09:50:27,566 - lol
+2024-10-28 09:50:27,566 - None
+2024-10-28 09:50:27,566 - tp
+2024-10-28 09:50:27,566 - conv4.bias_bits
+2024-10-28 09:50:27,566 - #################
+2024-10-28 09:50:27,566 - <distiller.scheduler.ParameterMasker object at 0x736eafd91f50>
+2024-10-28 09:50:27,566 - lol
+2024-10-28 09:50:27,566 - None
+2024-10-28 09:50:27,566 - tp
+2024-10-28 09:50:27,566 - conv4.quantize_activation
+2024-10-28 09:50:27,566 - #################
+2024-10-28 09:50:27,566 - <distiller.scheduler.ParameterMasker object at 0x736eafd91110>
+2024-10-28 09:50:27,566 - lol
+2024-10-28 09:50:27,567 - None
+2024-10-28 09:50:27,567 - tp
+2024-10-28 09:50:27,567 - conv4.adjust_output_shift
+2024-10-28 09:50:27,567 - #################
+2024-10-28 09:50:27,567 - <distiller.scheduler.ParameterMasker object at 0x736eafd91fd0>
+2024-10-28 09:50:27,567 - lol
+2024-10-28 09:50:27,567 - None
+2024-10-28 09:50:27,567 - tp
+2024-10-28 09:50:27,567 - conv4.shift_quantile
+2024-10-28 09:50:27,567 - #################
+2024-10-28 09:50:27,567 - <distiller.scheduler.ParameterMasker object at 0x736eafd91a10>
+2024-10-28 09:50:27,567 - lol
+2024-10-28 09:50:27,567 - None
+2024-10-28 09:50:27,567 - tp
+2024-10-28 09:50:27,567 - conv4.op.weight
+2024-10-28 09:50:27,567 - #################
+2024-10-28 09:50:27,567 - <distiller.scheduler.ParameterMasker object at 0x736eafd92510>
+2024-10-28 09:50:27,571 - lol
+2024-10-28 09:50:27,571 - None
+2024-10-28 09:50:27,571 - tp
+2024-10-28 09:50:27,571 - conv4.op.bias
+2024-10-28 09:50:27,571 - #################
+2024-10-28 09:50:27,571 - <distiller.scheduler.ParameterMasker object at 0x736eafd91b90>
+2024-10-28 09:50:27,571 - lol
+2024-10-28 09:50:27,571 - None
+2024-10-28 09:50:27,571 - tp
+2024-10-28 09:50:27,571 - conv5.output_shift
+2024-10-28 09:50:27,572 - #################
+2024-10-28 09:50:27,572 - <distiller.scheduler.ParameterMasker object at 0x736eafeff5d0>
+2024-10-28 09:50:27,572 - lol
+2024-10-28 09:50:27,572 - None
+2024-10-28 09:50:27,572 - tp
+2024-10-28 09:50:27,572 - conv5.weight_bits
+2024-10-28 09:50:27,573 - #################
+2024-10-28 09:50:27,573 - <distiller.scheduler.ParameterMasker object at 0x736eafeff610>
+2024-10-28 09:50:27,573 - lol
+2024-10-28 09:50:27,573 - None
+2024-10-28 09:50:27,573 - tp
+2024-10-28 09:50:27,573 - conv5.bias_bits
+2024-10-28 09:50:27,573 - #################
+2024-10-28 09:50:27,573 - <distiller.scheduler.ParameterMasker object at 0x736eafd91c90>
+2024-10-28 09:50:27,573 - lol
+2024-10-28 09:50:27,573 - None
+2024-10-28 09:50:27,573 - tp
+2024-10-28 09:50:27,573 - conv5.quantize_activation
+2024-10-28 09:50:27,574 - #################
+2024-10-28 09:50:27,574 - <distiller.scheduler.ParameterMasker object at 0x736eafd92010>
+2024-10-28 09:50:27,574 - lol
+2024-10-28 09:50:27,574 - None
+2024-10-28 09:50:27,575 - tp
+2024-10-28 09:50:27,575 - conv5.adjust_output_shift
+2024-10-28 09:50:27,576 - #################
+2024-10-28 09:50:27,579 - <distiller.scheduler.ParameterMasker object at 0x736eafd91890>
+2024-10-28 09:50:27,580 - lol
+2024-10-28 09:50:27,580 - None
+2024-10-28 09:50:27,580 - tp
+2024-10-28 09:50:27,580 - conv5.shift_quantile
+2024-10-28 09:50:27,580 - #################
+2024-10-28 09:50:27,580 - <distiller.scheduler.ParameterMasker object at 0x736eafd91210>
+2024-10-28 09:50:27,580 - lol
+2024-10-28 09:50:27,580 - None
+2024-10-28 09:50:27,580 - tp
+2024-10-28 09:50:27,581 - conv5.op.weight
+2024-10-28 09:50:27,581 - #################
+2024-10-28 09:50:27,581 - <distiller.scheduler.ParameterMasker object at 0x736eafd90cd0>
+2024-10-28 09:50:27,581 - lol
+2024-10-28 09:50:27,581 - None
+2024-10-28 09:50:27,581 - tp
+2024-10-28 09:50:27,581 - conv5.op.bias
+2024-10-28 09:50:27,581 - #################
+2024-10-28 09:50:27,581 - <distiller.scheduler.ParameterMasker object at 0x736eafd911d0>
+2024-10-28 09:50:27,582 - lol
+2024-10-28 09:50:27,582 - None
+2024-10-28 09:50:27,583 - tp
+2024-10-28 09:50:27,583 - mp.output_shift
+2024-10-28 09:50:27,583 - #################
+2024-10-28 09:50:27,583 - <distiller.scheduler.ParameterMasker object at 0x736eafd90150>
+2024-10-28 09:50:27,584 - lol
+2024-10-28 09:50:27,584 - None
+2024-10-28 09:50:27,584 - tp
+2024-10-28 09:50:27,584 - mp.weight_bits
+2024-10-28 09:50:27,584 - #################
+2024-10-28 09:50:27,584 - <distiller.scheduler.ParameterMasker object at 0x736eafd91190>
+2024-10-28 09:50:27,585 - lol
+2024-10-28 09:50:27,585 - None
+2024-10-28 09:50:27,585 - tp
+2024-10-28 09:50:27,585 - mp.bias_bits
+2024-10-28 09:50:27,585 - #################
+2024-10-28 09:50:27,585 - <distiller.scheduler.ParameterMasker object at 0x736eafd91710>
+2024-10-28 09:50:27,586 - lol
+2024-10-28 09:50:27,586 - None
+2024-10-28 09:50:27,586 - tp
+2024-10-28 09:50:27,586 - mp.quantize_activation
+2024-10-28 09:50:27,586 - #################
+2024-10-28 09:50:27,586 - <distiller.scheduler.ParameterMasker object at 0x736eafd91490>
+2024-10-28 09:50:27,586 - lol
+2024-10-28 09:50:27,587 - None
+2024-10-28 09:50:27,587 - tp
+2024-10-28 09:50:27,587 - mp.adjust_output_shift
+2024-10-28 09:50:27,587 - #################
+2024-10-28 09:50:27,587 - <distiller.scheduler.ParameterMasker object at 0x736eafd91a90>
+2024-10-28 09:50:27,587 - lol
+2024-10-28 09:50:27,587 - None
+2024-10-28 09:50:27,588 - tp
+2024-10-28 09:50:27,588 - mp.shift_quantile
+2024-10-28 09:50:27,588 - #################
+2024-10-28 09:50:27,588 - <distiller.scheduler.ParameterMasker object at 0x736eafd92050>
+2024-10-28 09:50:27,588 - lol
+2024-10-28 09:50:27,588 - None
+2024-10-28 09:50:27,588 - tp
+2024-10-28 09:50:27,588 - fc1.output_shift
+2024-10-28 09:50:27,589 - #################
+2024-10-28 09:50:27,589 - <distiller.scheduler.ParameterMasker object at 0x736eafd91390>
+2024-10-28 09:50:27,589 - lol
+2024-10-28 09:50:27,589 - None
+2024-10-28 09:50:27,589 - tp
+2024-10-28 09:50:27,589 - fc1.weight_bits
+2024-10-28 09:50:27,589 - #################
+2024-10-28 09:50:27,591 - <distiller.scheduler.ParameterMasker object at 0x736eafd912d0>
+2024-10-28 09:50:27,592 - lol
+2024-10-28 09:50:27,592 - None
+2024-10-28 09:50:27,592 - tp
+2024-10-28 09:50:27,592 - fc1.bias_bits
+2024-10-28 09:50:27,592 - #################
+2024-10-28 09:50:27,592 - <distiller.scheduler.ParameterMasker object at 0x736eafd91350>
+2024-10-28 09:50:27,592 - lol
+2024-10-28 09:50:27,592 - None
+2024-10-28 09:50:27,592 - tp
+2024-10-28 09:50:27,592 - fc1.quantize_activation
+2024-10-28 09:50:27,593 - #################
+2024-10-28 09:50:27,593 - <distiller.scheduler.ParameterMasker object at 0x736eafd90050>
+2024-10-28 09:50:27,593 - lol
+2024-10-28 09:50:27,593 - None
+2024-10-28 09:50:27,593 - tp
+2024-10-28 09:50:27,593 - fc1.adjust_output_shift
+2024-10-28 09:50:27,593 - #################
+2024-10-28 09:50:27,593 - <distiller.scheduler.ParameterMasker object at 0x736eafd91590>
+2024-10-28 09:50:27,593 - lol
+2024-10-28 09:50:27,594 - None
+2024-10-28 09:50:27,594 - tp
+2024-10-28 09:50:27,594 - fc1.shift_quantile
+2024-10-28 09:50:27,594 - #################
+2024-10-28 09:50:27,594 - <distiller.scheduler.ParameterMasker object at 0x736eafd91e10>
+2024-10-28 09:50:27,594 - lol
+2024-10-28 09:50:27,594 - None
+2024-10-28 09:50:27,594 - tp
+2024-10-28 09:50:27,594 - fc1.op.weight
+2024-10-28 09:50:27,594 - #################
+2024-10-28 09:50:27,594 - <distiller.scheduler.ParameterMasker object at 0x736eafd6e210>
+2024-10-28 09:50:27,594 - lol
+2024-10-28 09:50:27,594 - None
+2024-10-28 09:50:27,594 - tp
+2024-10-28 09:50:27,594 - fc1.op.bias
+2024-10-28 09:50:27,594 - #################
+2024-10-28 09:50:27,594 - <distiller.scheduler.ParameterMasker object at 0x736eafd91050>
+2024-10-28 09:50:27,594 - lol
+2024-10-28 09:50:27,594 - None
+2024-10-28 09:50:27,595 - tp
+2024-10-28 09:50:27,596 - fc2.output_shift
+2024-10-28 09:50:27,597 - #################
+2024-10-28 09:50:27,598 - <distiller.scheduler.ParameterMasker object at 0x736eafd90e10>
+2024-10-28 09:50:27,600 - lol
+2024-10-28 09:50:27,600 - None
+2024-10-28 09:50:27,601 - tp
+2024-10-28 09:50:27,601 - fc2.weight_bits
+2024-10-28 09:50:27,601 - #################
+2024-10-28 09:50:27,601 - <distiller.scheduler.ParameterMasker object at 0x736eafd90e90>
+2024-10-28 09:50:27,601 - lol
+2024-10-28 09:50:27,601 - None
+2024-10-28 09:50:27,601 - tp
+2024-10-28 09:50:27,601 - fc2.bias_bits
+2024-10-28 09:50:27,601 - #################
+2024-10-28 09:50:27,601 - <distiller.scheduler.ParameterMasker object at 0x736eafd90d50>
+2024-10-28 09:50:27,601 - lol
+2024-10-28 09:50:27,601 - None
+2024-10-28 09:50:27,601 - tp
+2024-10-28 09:50:27,601 - fc2.quantize_activation
+2024-10-28 09:50:27,601 - #################
+2024-10-28 09:50:27,602 - <distiller.scheduler.ParameterMasker object at 0x736eafd90c90>
+2024-10-28 09:50:27,602 - lol
+2024-10-28 09:50:27,602 - None
+2024-10-28 09:50:27,602 - tp
+2024-10-28 09:50:27,602 - fc2.adjust_output_shift
+2024-10-28 09:50:27,602 - #################
+2024-10-28 09:50:27,602 - <distiller.scheduler.ParameterMasker object at 0x736eafd90d10>
+2024-10-28 09:50:27,602 - lol
+2024-10-28 09:50:27,602 - None
+2024-10-28 09:50:27,602 - tp
+2024-10-28 09:50:27,602 - fc2.shift_quantile
+2024-10-28 09:50:27,602 - #################
+2024-10-28 09:50:27,603 - <distiller.scheduler.ParameterMasker object at 0x736eafd90c10>
+2024-10-28 09:50:27,603 - lol
+2024-10-28 09:50:27,603 - None
+2024-10-28 09:50:27,603 - tp
+2024-10-28 09:50:27,603 - fc2.op.weight
+2024-10-28 09:50:27,603 - #################
+2024-10-28 09:50:27,605 - <distiller.scheduler.ParameterMasker object at 0x736eafd90bd0>
+2024-10-28 09:50:27,607 - lol
+2024-10-28 09:50:27,607 - None
+2024-10-28 09:50:27,608 - tp
+2024-10-28 09:50:27,608 - fc2.op.bias
+2024-10-28 09:50:27,609 - #################
+2024-10-28 09:50:27,609 - <distiller.scheduler.ParameterMasker object at 0x736eafd90ad0>
+2024-10-28 09:50:27,609 - lol
+2024-10-28 09:50:27,610 - None
+2024-10-28 09:50:27,610 - tp
+2024-10-28 09:50:27,610 - fc3.output_shift
+2024-10-28 09:50:27,610 - #################
+2024-10-28 09:50:27,611 - <distiller.scheduler.ParameterMasker object at 0x736eafd909d0>
+2024-10-28 09:50:27,611 - lol
+2024-10-28 09:50:27,611 - None
+2024-10-28 09:50:27,611 - tp
+2024-10-28 09:50:27,611 - fc3.weight_bits
+2024-10-28 09:50:27,611 - #################
+2024-10-28 09:50:27,611 - <distiller.scheduler.ParameterMasker object at 0x736eafd90950>
+2024-10-28 09:50:27,611 - lol
+2024-10-28 09:50:27,611 - None
+2024-10-28 09:50:27,612 - tp
+2024-10-28 09:50:27,613 - fc3.bias_bits
+2024-10-28 09:50:27,614 - #################
+2024-10-28 09:50:27,614 - <distiller.scheduler.ParameterMasker object at 0x736eafd908d0>
+2024-10-28 09:50:27,614 - lol
+2024-10-28 09:50:27,614 - None
+2024-10-28 09:50:27,614 - tp
+2024-10-28 09:50:27,614 - fc3.quantize_activation
+2024-10-28 09:50:27,614 - #################
+2024-10-28 09:50:27,614 - <distiller.scheduler.ParameterMasker object at 0x736eafd90750>
+2024-10-28 09:50:27,614 - lol
+2024-10-28 09:50:27,614 - None
+2024-10-28 09:50:27,615 - tp
+2024-10-28 09:50:27,615 - fc3.adjust_output_shift
+2024-10-28 09:50:27,615 - #################
+2024-10-28 09:50:27,615 - <distiller.scheduler.ParameterMasker object at 0x736eafd90810>
+2024-10-28 09:50:27,615 - lol
+2024-10-28 09:50:27,615 - None
+2024-10-28 09:50:27,615 - tp
+2024-10-28 09:50:27,615 - fc3.shift_quantile
+2024-10-28 09:50:27,615 - #################
+2024-10-28 09:50:27,615 - <distiller.scheduler.ParameterMasker object at 0x736eafd906d0>
+2024-10-28 09:50:27,615 - lol
+2024-10-28 09:50:27,615 - None
+2024-10-28 09:50:27,615 - tp
+2024-10-28 09:50:27,615 - fc3.op.weight
+2024-10-28 09:50:27,615 - #################
+2024-10-28 09:50:27,616 - <distiller.scheduler.ParameterMasker object at 0x736eafd90590>
+2024-10-28 09:50:27,616 - lol
+2024-10-28 09:50:27,616 - None
+2024-10-28 09:50:27,616 - tp
+2024-10-28 09:50:27,616 - fc3.op.bias
+2024-10-28 09:50:27,616 - #################
+2024-10-28 09:50:27,616 - <distiller.scheduler.ParameterMasker object at 0x736eafd90510>
+2024-10-28 09:50:27,616 - lol
+2024-10-28 09:50:27,616 - None
+2024-10-28 09:50:27,616 - tp
+2024-10-28 09:50:27,616 - Loaded compression schedule from checkpoint (epoch 1)
+2024-10-28 09:50:27,626 - _IncompatibleKeys(missing_keys=['conv1.bn.weight', 'conv1.bn.bias', 'conv1.bn.running_mean', 'conv1.bn.running_var'], unexpected_keys=[])
+2024-10-28 09:50:27,631 - ['conv1.bn.weight', 'conv1.bn.bias', 'conv1.bn.running_mean', 'conv1.bn.running_var']
+2024-10-28 09:50:27,632 - The loaded checkpoint (../ai8x-synthesis/memes/qat_best.pth.tar) is missing 4 state keys
+2024-10-28 09:50:27,639 - 
+2024-10-28 09:50:27,639 - Log file for this run: /home/flaviose/master_thesis/ai8x-training/logs/2024.10.28-095027/2024.10.28-095027.log
